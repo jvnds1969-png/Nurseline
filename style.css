@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* =========================
-   Zorgstart Nurseline — design in lijn met Zorgstart
+   Zorgstart Nurseline — in lijn met bestaande Zorgstart CSS
    ========================= */
 
 :root{
-  /* Gebruik dezelfde tokens als Zorgstart */
   --brand:#ff385c;
   --brand-dark:#e61e4d;
   --brand-soft:#fff1f3;
@@ -49,9 +48,7 @@ body{
   line-height:1.6;
 }
 
-/* =========================
-   Layout helpers
-   ========================= */
+/* Container */
 
 .zs-nu-container{
   width:100%;
@@ -60,16 +57,16 @@ body{
   padding:0 1.5rem;
 }
 
-/* =========================
-   Hero / header
-   ========================= */
+/* Hero */
 
 .zs-nu-hero{
   background:linear-gradient(135deg, #0f172a, #1f2937);
   color:#ffffff;
-  padding:1.5rem 0 3.5rem 0;
+  padding:1.2rem 0 3.4rem 0;
   box-shadow:var(--shadow);
 }
+
+/* Navbar in hero */
 
 .zs-nu-nav{
   display:flex;
@@ -112,4 +109,314 @@ body{
   padding:.35rem .9rem;
   border-radius:999px;
   border:1px solid rgba(148,163,184,0.5);
-  transition:background .15s ease, color .15s ease, border-c
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.zs-nu-nav-link:hover{
+  background:#111827;
+  border-color:#e5e7eb;
+}
+
+/* Hero body */
+
+.zs-nu-hero-inner{
+  display:flex;
+  align-items:flex-start;
+  gap:3rem;
+  padding:0 1.5rem;
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.zs-nu-hero-content{
+  flex:1;
+}
+
+.zs-nu-eyebrow{
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  font-size:.78rem;
+  color:#cbd5f5;
+  margin-bottom:.4rem;
+}
+
+.zs-nu-hero-title{
+  font-size:2.4rem;
+  margin-bottom:1rem;
+  letter-spacing:-0.02em;
+}
+
+.zs-nu-hero-text{
+  font-size:1.02rem;
+  color:#e5e7eb;
+  max-width:540px;
+  margin-bottom:1.5rem;
+}
+
+.zs-nu-hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.6rem;
+  margin-bottom:1.6rem;
+}
+
+.zs-nu-pill{
+  font-size:.78rem;
+  padding:.2rem .7rem;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.7);
+  color:#e5e7eb;
+}
+
+.zs-nu-pill-24{
+  background:rgba(16,185,129,0.18);
+  border-color:rgba(16,185,129,0.9);
+  color:#bbf7d0;
+  font-weight:700;
+}
+
+/* Buttons */
+
+.zs-nu-btn{
+  padding:.65rem 1.2rem;
+  border-radius:var(--r-sm);
+  font-weight:700;
+  cursor:pointer;
+  border:none;
+  font-size:.9rem;
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.zs-nu-btn:active{transform:translateY(0)}
+
+.zs-nu-btn-primary{
+  background:var(--brand);
+  color:white;
+  box-shadow:0 10px 22px rgba(255,56,92,0.20);
+}
+.zs-nu-btn-primary:hover{
+  background:var(--brand-dark);
+  box-shadow:0 14px 28px rgba(255,56,92,0.26);
+}
+
+.zs-nu-btn-outline{
+  background:transparent;
+  border:1px solid #e5e7eb;
+  color:#e5e7eb;
+}
+.zs-nu-btn-outline:hover{
+  background:#111827;
+  border-color:#f9fafb;
+}
+
+/* Hero panel */
+
+.zs-nu-hero-panel{
+  flex:1;
+  min-width:260px;
+  background:rgba(15,23,42,0.9);
+  border-radius:var(--r-lg);
+  padding:1.3rem 1.4rem;
+  border:1px solid rgba(148,163,184,0.7);
+  box-shadow:var(--shadow-strong);
+}
+
+.zs-nu-hero-panel-title{
+  font-size:1.05rem;
+  margin-bottom:.4rem;
+}
+
+.zs-nu-hero-panel-text{
+  font-size:.86rem;
+  color:#cbd5e1;
+  margin-bottom:.9rem;
+}
+
+.zs-nu-hero-list{
+  list-style:none;
+  font-size:.85rem;
+  color:#e5e7eb;
+}
+
+.zs-nu-hero-list li{
+  padding:.25rem 0;
+}
+.zs-nu-hero-list li::before{
+  content:"✓ ";
+  color:#22c55e;
+  font-weight:800;
+}
+
+/* Sections */
+
+.zs-nu-section{
+  padding:3rem 0;
+}
+
+.zs-nu-section-alt{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.zs-nu-section-header{
+  margin-bottom:1.6rem;
+}
+
+.zs-nu-section-title{
+  font-size:1.8rem;
+  letter-spacing:-0.01em;
+  margin-bottom:.3rem;
+}
+
+.zs-nu-section-sub{
+  font-size:.98rem;
+  color:var(--muted);
+  max-width:720px;
+}
+
+/* Grid & text */
+
+.zs-nu-grid-2{
+  display:grid;
+  grid-template-columns:2fr 1.6fr;
+  gap:1.6rem;
+  align-items:flex-start;
+}
+
+.zs-nu-text p{
+  color:var(--muted);
+  margin-bottom:.8rem;
+  font-size:.96rem;
+}
+
+/* Cards & lists */
+
+.zs-nu-card{
+  background:var(--surface);
+  border-radius:var(--r-md);
+  border:1px solid var(--border);
+  padding:1.4rem 1.5rem;
+  box-shadow:var(--shadow);
+}
+
+.zs-nu-card-title{
+  font-size:1.05rem;
+  margin-bottom:.6rem;
+}
+
+.zs-nu-list{
+  list-style:none;
+  font-size:.9rem;
+  color:var(--muted);
+}
+
+.zs-nu-list li{
+  padding:.3rem 0 .3rem 1.1rem;
+  position:relative;
+}
+.zs-nu-list li::before{
+  content:"•";
+  position:absolute;
+  left:0;
+  top:0;
+  color:var(--brand);
+  font-size:1.1rem;
+}
+
+/* Columns */
+
+.zs-nu-columns{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.6rem;
+}
+
+.zs-nu-columns h3{
+  font-size:1.05rem;
+  margin-bottom:.5rem;
+}
+
+/* 24/7 highlight */
+
+.zs-nu-highlight-block{
+  max-width:800px;
+  margin:0 auto;
+  background:linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-radius:var(--r-md);
+  border:1px solid #bbf7d0;
+  padding:1.3rem 1.4rem;
+}
+
+.zs-nu-highlight-text{
+  font-size:.95rem;
+  color:#166534;
+  margin-bottom:.4rem;
+  font-weight:600;
+}
+
+.zs-nu-highlight-sub{
+  font-size:.9rem;
+  color:#15803d;
+}
+
+/* Contact */
+
+.zs-nu-contact{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.zs-nu-form{
+  margin-top:1.5rem;
+  max-width:640px;
+}
+
+.zs-nu-form-group{
+  margin-bottom:1rem;
+}
+
+.zs-nu-label{
+  display:block;
+  font-size:.9rem;
+  margin-bottom:.25rem;
+  color:var(--text);
+  font-weight:500;
+}
+
+.zs-nu-input,
+.zs-nu-textarea,
+.zs-nu-select{
+  width:100%;
+  padding:.65rem .75rem;
+  border-radius:var(--r-sm);
+  border:1px solid var(--border);
+  font:inherit;
+  color:var(--text);
+  background:white;
+  font-size:.9rem;
+}
+
+.zs-nu-input:focus,
+.zs-nu-textarea:focus,
+.zs-nu-select:focus{
+  outline:none;
+  border-color:var(--brand);
+  box-shadow:var(--focus);
+}
+
+.zs-nu-textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+/* Footer */
+
+.zs-nu-footer{
+  text-a
+
