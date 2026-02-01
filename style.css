@@ -1,256 +1,115 @@
-/* Basisstijl – namen met 'zs-' om conflicten met bestaande CSS te beperken */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-:root {
-  /* Pas deze kleuren eventueel aan jullie bestaande Zorgstart-huisstijl aan */
-  --zs-primary: #2a7f9f;
-  --zs-primary-dark: #215f78;
-  --zs-accent: #f3b047;
-  --zs-bg-light: #f5f7fa;
-  --zs-text-main: #24323d;
-  --zs-text-muted: #5f6d78;
-  --zs-radius: 10px;
+/* =========================
+   Zorgstart Nurseline — design in lijn met Zorgstart
+   ========================= */
+
+:root{
+  /* Gebruik dezelfde tokens als Zorgstart */
+  --brand:#ff385c;
+  --brand-dark:#e61e4d;
+  --brand-soft:#fff1f3;
+
+  --bg:#f8fafc;
+  --surface:#ffffff;
+  --surface-2:#f1f5f9;
+  --text:#0f172a;
+  --muted:#64748b;
+  --muted-2:#94a3b8;
+  --border:#e2e8f0;
+
+  --success:#10b981;
+  --success-dark:#059669;
+  --danger:#dc2626;
+
+  --shadow:0 1px 3px rgba(0,0,0,0.10);
+  --shadow-strong:0 10px 40px rgba(0,0,0,0.12);
+
+  --r-sm:10px;
+  --r-md:12px;
+  --r-lg:16px;
+
+  --focus:0 0 0 3px rgba(255,56,92,0.15);
 }
 
 *,
 *::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*::after{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--zs-text-main);
-  line-height: 1.6;
-  background-color: #ffffff;
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Inter', sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
 }
 
-/* Layout helpers */
+/* =========================
+   Layout helpers
+   ========================= */
 
-.zs-container {
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+.zs-nu-container{
+  width:100%;
+  max-width:1120px;
+  margin:0 auto;
+  padding:0 1.5rem;
 }
 
-/* Hero */
+/* =========================
+   Hero / header
+   ========================= */
 
-.zs-hero {
-  background: linear-gradient(135deg, #183c4d, #2a7f9f);
-  color: #ffffff;
-  padding: 1.5rem 0 4rem 0;
+.zs-nu-hero{
+  background:linear-gradient(135deg, #0f172a, #1f2937);
+  color:#ffffff;
+  padding:1.5rem 0 3.5rem 0;
+  box-shadow:var(--shadow);
 }
 
-.zs-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2.3rem;
+.zs-nu-nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 1.5rem;
+  margin-bottom:2.2rem;
 }
 
-.zs-logo {
-  font-weight: 700;
-  font-size: 1.4rem;
-  letter-spacing: 0.04em;
+.zs-nu-logo{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
 }
 
-.zs-nav-cta {
-  color: #ffffff;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
+.zs-nu-logo-icon{
+  background:var(--brand);
+  color:white;
+  width:32px;
+  height:32px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:.9rem;
 }
 
-.zs-nav-cta:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+.zs-nu-logo-text{
+  font-weight:800;
+  font-size:1.2rem;
+  letter-spacing:-0.02em;
 }
 
-.zs-hero-content {
-  max-width: 640px;
-}
-
-.zs-eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  opacity: 0.9;
-  margin-bottom: 0.4rem;
-}
-
-.zs-hero-content h1 {
-  font-size: 2.4rem;
-  margin-bottom: 1rem;
-}
-
-.zs-hero-content p {
-  font-size: 1.05rem;
-  margin-bottom: 1.6rem;
-  color: #e4f3f7;
-}
-
-.zs-btn-primary {
-  display: inline-block;
-  background-color: var(--zs-accent);
-  color: #1f2830;
-  text-decoration: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border: none;
-  cursor: pointer;
-}
-
-.zs-btn-primary:hover {
-  background-color: #e2a341;
-}
-
-/* Sections */
-
-.zs-section {
-  padding: 3rem 0;
-}
-
-.zs-section-alt {
-  background-color: var(--zs-bg-light);
-}
-
-.zs-section h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.9rem;
-}
-
-.zs-section p {
-  margin-bottom: 0.8rem;
-  color: var(--zs-text-muted);
-  max-width: 800px;
-}
-
-.zs-highlight {
-  font-weight: 600;
-  color: var(--zs-primary-dark);
-}
-
-/* Grids en kolommen */
-
-.zs-grid {
-  display: grid;
-  gap: 1.8rem;
-  grid-template-columns: 3fr 2fr;
-  align-items: flex-start;
-}
-
-.zs-columns {
-  display: grid;
-  gap: 1.8rem;
-  grid-template-columns: 1fr 1fr;
-}
-
-/* Cards en lijsten */
-
-.zs-card {
-  background-color: #ffffff;
-  border-radius: var(--zs-radius);
-  padding: 1.4rem 1.5rem;
-  box-shadow: 0 10px 30px rgba(18, 37, 52, 0.08);
-  border: 1px solid rgba(21, 42, 61, 0.05);
-}
-
-.zs-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.7rem;
-}
-
-.zs-list {
-  list-style: none;
-}
-
-.zs-list li {
-  position: relative;
-  padding-left: 1.4rem;
-  margin-bottom: 0.5rem;
-  color: var(--zs-text-muted);
-}
-
-.zs-list li::before {
-  content: "•";
-  position: absolute;
-  left: 0.1rem;
-  top: -0.05rem;
-  color: var(--zs-primary);
-  font-size: 1.1rem;
-}
-
-/* Contact */
-
-.zs-contact {
-  padding-bottom: 3.5rem;
-}
-
-.zs-form {
-  margin-top: 1.5rem;
-  max-width: 640px;
-}
-
-.zs-form-group {
-  margin-bottom: 1rem;
-}
-
-.zs-form label {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 0.25rem;
-}
-
-.zs-form input,
-.zs-form textarea,
-.zs-form select {
-  width: 100%;
-  padding: 0.6rem 0.7rem;
-  border-radius: var(--zs-radius);
-  border: 1px solid #cbd5e1;
-  font: inherit;
-  color: var(--zs-text-main);
-  background-color: #ffffff;
-}
-
-.zs-form input:focus,
-.zs-form textarea:focus,
-.zs-form select:focus {
-  outline: none;
-  border-color: var(--zs-primary);
-  box-shadow: 0 0 0 2px rgba(42, 127, 159, 0.17);
-}
-
-/* Footer */
-
-.zs-footer {
-  background-color: #111820;
-  color: #9aa7b3;
-  padding: 1.4rem 0;
-  font-size: 0.85rem;
-  text-align: center;
-}
-
-/* Responsief */
-
-@media (max-width: 900px) {
-  .zs-grid,
-  .zs-columns {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 720px) {
-  .zs-hero {
-    padding-bottom: 3rem;
-  }
-
-  .zs-hero-content h1 {
-    font-size: 2rem;
-  }
-}
+.zs-nu-nav-link{
+  color:#e5e7eb;
+  text-decoration:none;
+  font-size:.9rem;
+  font-weight:600;
+  padding:.35rem .9rem;
+  border-radius:999px;
+  border:1px solid rgba(148,163,184,0.5);
+  transition:background .15s ease, color .15s ease, border-c
