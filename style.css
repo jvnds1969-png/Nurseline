@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* =========================
+   Zorgstart Nurseline — in lijn met bestaande Zorgstart CSS
+   ========================= */
+
 :root{
   --brand:#ff385c;
   --brand-dark:#e61e4d;
@@ -36,7 +42,7 @@
 html{scroll-behavior:smooth}
 
 body{
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family:'Inter', sans-serif;
   color:var(--text);
   background:var(--bg);
   line-height:1.6;
@@ -103,6 +109,12 @@ body{
   padding:.35rem .9rem;
   border-radius:999px;
   border:1px solid rgba(148,163,184,0.5);
+  transition:background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.zs-nu-nav-link:hover{
+  background:#111827;
+  border-color:#e5e7eb;
 }
 
 /* Hero body */
@@ -174,18 +186,31 @@ body{
   font-size:.9rem;
   display:inline-flex;
   align-items:center;
+  gap:.35rem;
   text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
 }
+
+.zs-nu-btn:active{transform:translateY(0)}
 
 .zs-nu-btn-primary{
   background:var(--brand);
   color:white;
+  box-shadow:0 10px 22px rgba(255,56,92,0.20);
+}
+.zs-nu-btn-primary:hover{
+  background:var(--brand-dark);
+  box-shadow:0 14px 28px rgba(255,56,92,0.26);
 }
 
 .zs-nu-btn-outline{
   background:transparent;
   border:1px solid #e5e7eb;
   color:#e5e7eb;
+}
+.zs-nu-btn-outline:hover{
+  background:#111827;
+  border-color:#f9fafb;
 }
 
 /* Hero panel */
@@ -197,6 +222,7 @@ body{
   border-radius:var(--r-lg);
   padding:1.3rem 1.4rem;
   border:1px solid rgba(148,163,184,0.7);
+  box-shadow:var(--shadow-strong);
 }
 
 .zs-nu-hero-panel-title{
@@ -243,6 +269,7 @@ body{
 
 .zs-nu-section-title{
   font-size:1.8rem;
+  letter-spacing:-0.01em;
   margin-bottom:.3rem;
 }
 
@@ -274,6 +301,7 @@ body{
   border-radius:var(--r-md);
   border:1px solid var(--border);
   padding:1.4rem 1.5rem;
+  box-shadow:var(--shadow);
 }
 
 .zs-nu-card-title{
@@ -308,6 +336,11 @@ body{
   gap:1.6rem;
 }
 
+.zs-nu-columns h3{
+  font-size:1.05rem;
+  margin-bottom:.5rem;
+}
+
 /* 24/7 highlight */
 
 .zs-nu-highlight-block{
@@ -317,6 +350,18 @@ body{
   border-radius:var(--r-md);
   border:1px solid #bbf7d0;
   padding:1.3rem 1.4rem;
+}
+
+.zs-nu-highlight-text{
+  font-size:.95rem;
+  color:#166534;
+  margin-bottom:.4rem;
+  font-weight:600;
+}
+
+.zs-nu-highlight-sub{
+  font-size:.9rem;
+  color:#15803d;
 }
 
 /* Contact */
@@ -357,6 +402,14 @@ body{
   font-size:.9rem;
 }
 
+.zs-nu-input:focus,
+.zs-nu-textarea:focus,
+.zs-nu-select:focus{
+  outline:none;
+  border-color:var(--brand);
+  box-shadow:var(--focus);
+}
+
 .zs-nu-textarea{
   min-height:120px;
   resize:vertical;
@@ -370,4 +423,48 @@ body{
   background:var(--surface-2);
   color:var(--muted-2);
   font-size:.9rem;
+}
+
+/* Responsive */
+
+@media (max-width: 900px){
+  .zs-nu-hero-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:0 1.2rem;
+  }
+
+  .zs-nu-hero-title{
+    font-size:2.1rem;
+  }
+
+  .zs-nu-hero-panel{
+    width:100%;
+  }
+
+  .zs-nu-grid-2{
+    grid-template-columns:1fr;
+  }
+
+  .zs-nu-columns{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .zs-nu-nav{
+    padding:0 1rem;
+  }
+
+  .zs-nu-hero{
+    padding-bottom:2.7rem;
+  }
+
+  .zs-nu-hero-inner{
+    padding:0 1rem;
+  }
+
+  .zs-nu-section{
+    padding:2.4rem 0;
+  }
 }
